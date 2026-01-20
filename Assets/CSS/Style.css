@@ -1,0 +1,269 @@
+/* =========================================
+   1. VARIABLES & SETUP
+   ========================================= */
+:root {
+  --brand-green: #072f25;   /* Dark Green */
+  --brand-orange: #FF9924;  /* Orange/Gold */
+  --bg-cream: #f7f2e2;      /* Light Cream Background */
+  --text-dark: #1d1d1d;     /* Black/Dark Grey */
+  --text-light: #ffffff;    /* White */
+  --font-main: "Almarai", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: white;
+  color: var(--text-dark);
+  overflow-x: hidden; /* Prevents horizontal scrollbars */
+  direction: rtl; /* Enforce Right-to-Left globally */
+}
+
+/* Common Utilities */
+.pointer {
+  cursor: pointer;
+}
+
+.divider {
+  color: #ccc;
+  margin: 0 8px;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* =========================================
+   2. HEADER & TOP BAR
+   ========================================= */
+
+/* The top bar containing phone, location, etc. */
+header .bg-light {
+  background-color: var(--brand-green) !important; /* Overrides Bootstrap bg-light */
+  color: var(--text-light);
+  font-size: 13px;
+}
+
+/* Top bar icons */
+header .fa-brands,
+header .fa-solid,
+header .fa-regular {
+  color: var(--text-light); /* Default white */
+  transition: color 0.3s ease;
+}
+
+/* Specific color for icons inside the contact info if needed */
+header .text-warning {
+  color: var(--brand-orange) !important;
+}
+
+/* Hover effect for social icons in top bar */
+header .fa-brands:hover {
+  color: var(--brand-orange);
+}
+
+/* =========================================
+   3. NAVBAR
+   ========================================= */
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.navbar-brand .logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Navigation Links */
+.nav-link {
+  color: var(--brand-green);
+  font-weight: 700;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--brand-orange) !important;
+}
+
+/* Navbar Action Icons (Search, Cart, etc.) */
+.navbar .fa-solid, 
+.navbar .fa-regular {
+  color: var(--brand-green);
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar .fa-solid:hover, 
+.navbar .fa-regular:hover {
+  color: var(--brand-orange);
+}
+
+/* Mobile Toggler Styling */
+.navbar-toggler {
+  border: none;
+  box-shadow: none;
+}
+
+/* =========================================
+   4. HERO & MAIN SECTIONS
+   ========================================= */
+
+/* The Cream Background Section */
+.main-one {
+  background-color: var(--bg-cream);
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+/* Order Now Button */
+.btn-otlob {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  max-width: 100%;
+}
+
+.btn-otlob:hover {
+  transform: scale(1.05);
+}
+
+/* Carousel Images */
+.carousel-inner img {
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   5. IMAGE GRIDS (Menu & Offers)
+   ========================================= */
+
+/* Container for images */
+.swip-style img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect on food images */
+.swip-style img:hover {
+  transform: translateY(-5px); /* Moves up slightly */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Section Headings */
+h1 {
+  font-weight: 700;
+  color: var(--brand-green);
+}
+
+h1 span.text-danger {
+  color: var(--brand-orange) !important; /* Override bootstrap danger color */
+}
+
+/* =========================================
+   6. FOOTER
+   ========================================= */
+footer {
+  background-color: var(--brand-green);
+  color: white;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  margin-top: auto;
+}
+
+footer h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--brand-orange);
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+/* Footer Links (h3 used as links) */
+footer h3 {
+  font-size: 0.9rem;
+  color: #e0e0e0;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+footer h3:hover {
+  color: var(--brand-orange);
+  padding-right: 8px; /* Slide effect */
+}
+
+/* Social Icons in Footer */
+footer .fa-brands {
+  color: white;
+  margin: 0 5px;
+  transition: transform 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+footer .fa-brands:hover {
+  color: var(--brand-orange);
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* =========================================
+   7. RESPONSIVE MEDIA QUERIES
+   ========================================= */
+
+/* Tablet and Mobile (Below 992px) */
+@media (max-width: 991px) {
+  
+  /* Navbar */
+  .navbar-collapse {
+    background-color: white;
+    padding: 20px;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  }
+
+  .navbar-nav {
+    margin-bottom: 20px;
+  }
+  
+  /* Footer Alignment */
+  footer {
+    text-align: center;
+  }
+  
+  footer .d-flex.flex-column {
+    align-items: center !important; /* Force center alignment */
+  }
+
+  /* Typography Sizing */
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  p.lead { font-size: 1rem; }
+}
+
+/* Small Mobile (Below 576px) */
+@media (max-width: 576px) {
+  .logo {
+    height: 50px; /* Smaller logo on phones */
+  }
+  
+  /* Adjust grid gap for small screens */
+  .swip-style {
+    gap: 15px;
+  }
+}
